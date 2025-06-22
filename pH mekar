@@ -1,0 +1,112 @@
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import './App.css'; // Styling is still in separate file
+
+const tools = [
+  { id: 'upscale', title: 'Image Upscaler', desc: 'Increase resolution of photos using AI.', icon: '🔍' },
+  { id: 'background', title: 'Background Remover', desc: 'Remove or change background instantly.', icon: '🎯' },
+  { id: 'pdf', title: 'Image to PDF', desc: 'Convert one or more images to PDF.', icon: '📄' },
+  { id: 'enhance', title: 'Photo Enhancer', desc: 'Sharpen blurry photos and enhance quality.', icon: '✨' },
+  { id: 'cartoon', title: 'Image to Cartoon', desc: 'Turn your photo into a cartoon image.', icon: '🎨' }
+];
+
+function App() {
+  return (
+    <>
+      <Helmet>
+        <title>AI Photo Tools - Free Online Image Editor</title>
+        <meta name="description" content="Upscale photos, remove backgrounds, convert to PDF, cartoonify and enhance images with AI." />
+        <meta name="keywords" content="image upscaler, background remover, photo enhancer, image to PDF, AI tools, cartoonify image" />
+      </Helmet>
+
+      <div className="app-container">
+        {/* Top Ad */}
+        <div className="ad-top">Ad Unit: <code>top-banner-id</code></div>
+
+        <div className="layout">
+          {/* Left Ad */}
+          <div className="ad-left">Ad Unit: <code>left-sidebar-id</code></div>
+
+          {/* Main Content */}
+          <div className="tools-container">
+            <h1>AI Photo Editor Tools</h1>
+            <div className="tool-grid">
+              {tools.map(tool => (
+                <div key={tool.id} className="tool-card">
+                  <div className="icon">{tool.icon}</div>
+                  <h3>{tool.title}</h3>
+                  <p>{tool.desc}</p>
+                  <button>Open Tool</button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Ad */}
+          <div className="ad-right">Ad Unit: <code>right-sidebar-id</code></div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default App;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+}
+
+.app-container {
+  text-align: center;
+}
+
+.ad-top {
+  background: #ddd;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.layout {
+  display: flex;
+  margin-top: 10px;
+}
+
+.ad-left, .ad-right {
+  width: 120px;
+  background: #eee;
+  padding: 10px;
+  min-height: 100vh;
+  font-size: 12px;
+}
+
+.tools-container {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.tool-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.tool-card:hover {
+  transform: scale(1.02);
+}
+
+.tool-card .icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+npm install react-helmet
+npm start
+Ad Unit: <code>top-banner-id</code>
